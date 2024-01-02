@@ -1,0 +1,45 @@
+{
+  "articles": [],
+  "categories": [
+    {
+      "label": "Eth",
+      "id": 27
+    },
+    {
+      "label": "BTC",
+      "id": 28
+    },
+    {
+      "label": "FTM",
+      "id": 29
+    },
+    {
+      "label": "ADA",
+      "id": 30
+    },
+    {
+      "label": "AVAX",
+      "id": 31
+    },
+    {
+      "label": "OK",
+      "id": 32
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "label": "Crypto"
+    },
+    {
+      "id": 2,
+      "label": "Ecom"
+    },
+    {
+      "id": 3,
+      "label": "Programmation"
+    }
+  ],
+  "comments": [],
+  "users": []
+}

@@ -1,0 +1,69 @@
+<div class="row my-5 header ">
+    <div class="col-6 text-end">
+        <h1>List of Articles</h1>
+    </div>
+    <div class="col-6 text-center ">
+        <button class="btn btn-primary">Add</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 mx-auto ">
+        <form action="">
+            <div class="form-group my-3">
+                <label for="title"> Title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="form-group my-3">
+                <label for="slug">Slug</label>
+                <input type="text" class="form-control" id="slug">
+            </div>
+            <div class="form-group my-3">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description">
+            </div>
+            <div class="form-group my-3">
+                <label for="content">Content</label>
+                <textarea type="text" class="form-control" id="content"></textarea>
+            </div>
+            <div class="form-group my-3">
+                <label for="published_at">Date de Publication</label>
+                <input type="date" class="form-control" id="published_at">
+            </div>
+            
+            <div class="form-group my-3">
+                <label for="category">List of Categories</label>
+                <select class="form-select" id="category" aria-label="Default select example">
+                    <option selected>Select a Category</option>
+                    <option *ngFor="let category of categories()" [value]="category.id"> {{ category.label }} </option>
+                </select>
+            </div>
+            
+            <div class="form-group my-3">
+                <label for="tag" class="mx-3">Tags </label>
+                <div class="btn-group" id="tag" role="group" aria-label="Basic checkbox toggle button group">
+                    <ng-container *ngFor="let tag of tags()">
+                        <input type="checkbox" class="btn-check" [id]="tag.id" autocomplete="off">
+                        <label class="btn btn-outline-primary" [for]="tag.id">  {{ tag.label }} </label>
+                    </ng-container>
+                </div>
+            </div>
+            
+            
+            <div class="form-group my-3">
+                <label for="tag" class="mx-3">Active </label>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">On</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Off</label>
+                  </div>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+
+        </form>
+    </div>
+</div>

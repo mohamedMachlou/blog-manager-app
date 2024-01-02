@@ -1,0 +1,39 @@
+<div class="row my-5 ">
+    <div class="col-md-6 my-4 text-center">
+        <h1>List of Categories</h1>
+    </div>
+    <div class="col-md-6 text-end">
+        <button class="btn btn-success btn-sm">Add</button>
+    </div>
+</div>
+<div class="row my-4">
+    <div class="col-md-6 mx-auto">
+        <input #tagLabel [value]="label()" (input)="label.set(tagLabel.value)" (keyup.enter)="createOrUpdate() " type="text" class="form-control my-3" placeholder="Add a tag">
+        <ul class="list-group">
+            <li 
+            class="list-group-item my-2" 
+            *ngFor="let tag of tags() let i = index"
+            (click)="selected(i)"
+            [ngClass]="{
+                'active': index() == i,
+                'list-group-item-warning': index() == i && mode() == 'edit',
+                'list-group-item-success': index() == i && mode() == 'update',
+                'list-group-item-danger' : index() == i && mode() == 'delete',
+            }"
+            [ngStyle]="{
+                'color' : index() == i ?'white' : 'black',
+                'font-size' : index() == i ? '30px' : '15px',
+            }"
+            
+            > 
+                <div class="row">
+                    <div class="col mt-2"> {{  tag.label }} </div>
+                    <div class="col text-end">
+                        <button (click)="edit(tag) " class="btn btn-warning btn-sm my-1 mx-2 me-1">update</button>
+                        <button *ngIf="tag.id" (click)="delete(tag.id)" class="btn btn-danger btn-sm my-1 mx-2">delete</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
